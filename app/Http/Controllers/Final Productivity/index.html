@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosé Crystal Hotel - Premium Booking Experience</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1> Rosé Crystal Hotel</h1>
+                        <p>Premium Booking Experience</p>
+                    </div>
+                </div>
+
+                <div class="auth-section">
+                    <div id="user-info" class="user-info" style="display: none;">
+                        <div class="welcome-text">
+                            <p id="welcome-name">Welcome, User</p>
+                            <p id="user-email">user@example.com</p>
+                        </div>
+                        <button id="logout-btn" class="btn btn-outline">Logout</button>
+                    </div>
+                    <div id="auth-buttons" class="auth-buttons">
+                        <button id="login-btn" class="btn btn-outline">Login</button>
+                        <button id="register-btn" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Experience Luxury & Comfort</h2>
+                <p>Book your perfect stay with our premium room selection and world-class amenities</p>
+                <div class="amenities">
+                    <div class="amenity-item">
+                        <i class="fas fa-wifi"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-car"></i>
+                        <span>Parking</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-coffee"></i>
+                        <span>Breakfast</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Restaurant</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms">
+        <div class="container">
+            <div class="section-header">
+                <h3>Our Premium Rooms</h3>
+                <p>Choose from our carefully designed room types, each offering unique amenities and comfort</p>
+            </div>
+
+            <div class="rooms-grid" id="rooms-container">
+                <!-- Rooms will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4> Rosé Crystal Hotel</h4>
+                </div>
+                <p>Experience the finest hospitality and comfort</p>
+                <p class="copyright">© 2025  Rosé Crystal Hotel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome to 🌸 Rosé Crystal Hotel</h2>
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="tabs">
+                <button id="login-tab" class="tab active">Login</button>
+                <button id="register-tab" class="tab">Register</button>
+            </div>
+
+            <div id="login-form" class="tab-content active">
+                <form id="login-form-element">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="login-email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Sign In</button>
+                </form>
+            </div>
+
+            <div id="register-form" class="tab-content">
+                <form id="register-form-element">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="register-name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="register-email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="register-password" placeholder="Create a password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-confirm">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="register-confirm" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 id="booking-title">Book Room</h2>
+                <span class="close">&times;</span>
+            </div>
+
+            <div id="booking-form-content">
+                <!-- Booking form will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <div class="toast-text">
+                <div class="toast-title"></div>
+                <div class="toast-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -25,12 +25,13 @@ Route::post('delete-account',[AuthController::class,'deleteAccount'])->middlewar
 Route::post('reset-password',[AuthController::class,'resetPassword'])->middleware('auth:sanctum');
 
 // create route group for category controller 
+Route::get('products',[ProductController::class,'index']);
+
 
 // create route group for sanctum middleware
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('categories', CategoryController::class);
     Route::post('products',[ProductController::class,'store']);
-    Route::get('products',[ProductController::class,'index']);
 
     Route::get('search-product',[ProductController::class,'search']);
     Route::get('get-product-by-cate/{id}',[ProductController::class,'getProductsByCategory']);
@@ -52,5 +53,4 @@ Route::middleware('auth:sanctum')->group(function () {
     
     
 });
-
 
